@@ -97,7 +97,7 @@ oc new-build --strategy=docker --name=springboot-java https://github.com/ganrad/
 2.  Download the *s2i-springboot.json* template file from this repository and save it on your local machine where you have OpenShift CLI tools (oc binary) installed. Then use the command below to upload the template into your current project/namespace.
 
 ```
-oc create -f s2i-springboot.json
+oc create -f https://raw.githubusercontent.com/kranian/openshift-s2i-springboot-java/master/s2i-springboot.json
 ```
 
 3.  Click on 'Add to Project' in OpenShift CP Web Console (UI) to create a new application and then select the 'springboot-java' template from the 'Browse' images tab.  You will then be presented with a form where you can specify 
