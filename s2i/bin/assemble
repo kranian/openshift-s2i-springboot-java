@@ -37,7 +37,6 @@ execute_maven_build()
   if [ -d "$HOME/.m2/repository" ]; then
     rm -rf $HOME/.m2/repository
   fi
-  rm -rf $HOME
 }
 
 execute_gradle_build()
