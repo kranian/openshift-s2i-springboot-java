@@ -38,6 +38,11 @@
       "description": "Append Maven arguments"
     },
     {
+      "name":"AP_MODULE",
+      "displayName": "AP_MODULE Dir",
+      "description": "AP_MODULE Dir"
+    },
+    {
       "name": "GRADLE_ARGS_APPEND",
       "displayName": "Gradle arguments to append",
       "description": "Append Gradle arguments"
@@ -117,7 +122,15 @@
 		{
 		  "name": "BUILD_TYPE",
 		  "value": "${BUILD_TYPE}"
-		}
+		},
+        {
+          "name": "MAVEN_ARGS_APPEND",
+          "value": "${MAVEN_ARGS_APPEND}"
+        },
+        {
+          "name": "AP_MODULE",
+          "value": "${AP_MODULE}"
+        }
 	    ]
           },
           "type": "Source"
