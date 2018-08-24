@@ -43,13 +43,15 @@ ENV BUILD_TYPE=Maven
 
 # Drop the root user and make the content of /opt/openshift owned by user 1001
 RUN chown -R 1001:1001 /opt/openshift /opt/app-root/src
+COPY ./pinpoint-agent /opt/app-root/pinpoint-agent
 
 # Change perms on target/deploy directory to 777
-RUN chmod -R 777 /opt/openshift /opt/app-root/src
+RUN chmod -R 777 /opt/openshift /opt/app-root/src /opt/app-root/pinpoint-agent
 
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image
 # sets io.openshift.s2i.scripts-url label that way.
 COPY ./s2i/bin/ /usr/libexec/s2i
+
 RUN chmod -R 777 /usr/libexec/s2i
 
 # This default user is created in the openshift/base-centos7 image
