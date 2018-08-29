@@ -7,13 +7,13 @@
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
 
+exec sh /opt/app-root/scouter/agent.host/host.sh
 
 exec java -Dfile.encoding=UTF-8 \
           -Djava.security.egd=file:/dev/./urandom \
           -Xms256m -Xmx525m \
-          -javaagent:/opt/app-root/pinpoint-agent/pinpoint-bootstrap-1.7.3.jar \
-          -Dpinpoint.agentId=$HOSTNAME \
-          -Dpinpoint.applicationName=$AP_MODULE \
+          -javaagent:/opt/app-root/scouter/agent.java/scouter.agent.jar \
+          -Dobj_name=$HOSTNAME \
           -jar \
           /opt/openshift/app.jar $APP_OPTIONS
 
