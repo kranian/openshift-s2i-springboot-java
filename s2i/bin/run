@@ -7,7 +7,7 @@
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
 
-/opt/app-root/scouter/agent.host/host.sh
+sh -x /opt/app-root/scouter/agent.host/host.sh
 
 exec java -Dfile.encoding=UTF-8 \
           -Djava.security.egd=file:/dev/./urandom \
