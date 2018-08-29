@@ -14,6 +14,7 @@ exec java -Dfile.encoding=UTF-8 \
           -Xms256m -Xmx525m \
           -javaagent:/opt/app-root/scouter/agent.java/scouter.agent.jar \
           -Dobj_name=$HOSTNAME \
+          -Dscouter.config=/opt/app-root/scouter/agent.java/config/scouter.conf \
           -jar \
           /opt/openshift/app.jar $APP_OPTIONS
 
