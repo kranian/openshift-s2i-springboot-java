@@ -12,6 +12,12 @@ sh -x /opt/app-root/scouter/agent.host/host.sh
 exec java -Dfile.encoding=UTF-8 \
           -Djava.security.egd=file:/dev/./urandom \
           -Xms256m -Xmx525m \
+          -javaagent:/opt/app-root/apm/elastic-apm-agent-0.6.2.jar \
+          -Delastic.apm.server_url=http://220.123.184.111:8200  \
+          -Delastic.apm.service_name=lemonade-pc \
+          -Delastic.apm.logging.log_level=INFO \
+          -Delastic.apm.application_packages=start \
+          -Delastic.apm.capture_body=all \
           -javaagent:/opt/app-root/scouter/agent.java/scouter.agent.jar \
           -Dobj_name=$HOSTNAME \
           -Dscouter.config=/opt/app-root/scouter/agent.java/conf/scouter.conf \
